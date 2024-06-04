@@ -5,6 +5,6 @@ Jose
 Maria
 3000.00
 Rubens
-4000,00
+4000.00
 Katia
 7000.0
