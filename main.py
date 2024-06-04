@@ -10,29 +10,28 @@ def main(aliquotas, contribuintes, output):
     nomes = []
     
     def minF():
+        #how do I get the minimum value of each 'faixa'?
         for i in range(len(f1_lines)):
-            f1_lines[i] = f1_lines[i]
-            if i%2== 0:
+            if i%4 == 1:
                 faixas.append(str(f1_lines[i]).strip())
         return faixas
     
     def maxF():
+        #how do I get the max value of each 'faixa'?
         for i in range(len(f1_lines)):
-            f1_lines[i] = f1_lines[i]
-            if i%3 == 0:
+            if i%2 == 0:
                 faixas.append(str(f1_lines[i]).strip())
         return faixas
     
     def nome():
         for i in range(len(f2_lines)):
-            f2_lines[i] = f2_lines[i]  
             if i%2 == 0:
                 nomes.append(str(f2_lines[i]).strip())
         return nomes
     
     ebatabela = []
-    for i in range(len(maxF())):
-        ebatabela.append([maxF()[i]])
+    for i in range(len(nome())):
+        ebatabela.append([[minF()[i]], [maxF()[i]]])
     '''for i in range(len(nome())):
         ebatabela.append([nome()[i]])
     table = tabulate.tabulate(ebatabela, headers=["Nomes", "Impostos"], tablefmt="grid")'''
