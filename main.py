@@ -9,12 +9,15 @@
         num+=1
         if (num%4 == 0):
             num = 0'''
+def leituraf1():
+    f1 = open("aliquotas2024.txt", "r")
+    linesa = f1.readlines()
 
 def leituraf2():
     f2 = open("contribuintes2024.txt", "r")
     linesc = f2.readlines()
                         
-def faixa1(minSal,maxSal,salary,aliquota):
+'''def faixa1(minSal,maxSal,salary,aliquota):
     if (salary >= minSal and salary <= maxSal):
         aliq = aliquota
     return aliq
@@ -37,7 +40,7 @@ def faixa4(minSal,maxSal,salary,aliquota):
 def faixa5(minSal,maxSal,salary,aliquota):
     if (salary >= minSal and salary <= maxSal):
         aliq = aliquota
-    return aliq
+    return aliq'''
 
 if __name__ == "main":
     print("Seja bem vindo ao programa de cálculo de imposto de renda!")
