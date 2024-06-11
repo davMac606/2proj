@@ -2,7 +2,6 @@ import tabulate
 import os
 import pyperclip
 
-
 def read_aliq(file):
     aliq =  open(file + ".txt", "r")
     linhas = aliq.readlines()
