@@ -28,7 +28,7 @@ def read_cunt(file):
     
     return cunts
 
-def calcula_imposto_renda(salario, faixas):
+def calc_imp(salario, faixas):
     imposto_devido = 0.0
 
     for limite_inferior, limite_superior, aliquota in faixas:
@@ -46,7 +46,7 @@ def main(aliquotas, contribuintes, outputName):
     impostos_devidos = [["Nome", "Imposto"]]
 
     for nome, salario in contribuintes:
-        imposto = calcula_imposto_renda(salario, faixas_aliqs)
+        imposto = calc_imp(salario, faixas_aliqs)
         impostos_devidos.append([nome, "R$ " + "{:.2f}".format(round(imposto, 2))])
     
     table = tabulate.tabulate(impostos_devidos, headers="firstrow", tablefmt="grid")
