@@ -4,8 +4,8 @@ import pyperclip
 
 
 def read_aliq(file):
-    with open(file + ".txt", "r") as aliq:
-        linhas = aliq.readlines()
+    aliq =  open(file + ".txt", "r")
+    linhas = aliq.readlines()
     
     faixas = []
     for i in range(1, len(linhas), 4):
@@ -17,8 +17,8 @@ def read_aliq(file):
     return faixas
 
 def read_cunt(file):
-    with open(file + ".txt", "r") as cunt:
-        linhas = cunt.readlines()
+    cunt =  open(file + ".txt", "r")
+    linhas = cunt.readlines()
         
     cunts = []
     for i in range(0, len(linhas), 2):
