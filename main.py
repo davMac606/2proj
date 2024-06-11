@@ -31,14 +31,13 @@ def read_cunt(file):
 def calcula_imposto_renda(salario, faixas):
     imposto_devido = 0.0
 
-    for faixa in faixas:
-        limite_inferior, limite_superior, aliquota = faixa
+    for limite_inferior, limite_superior, aliquota in faixas:
         if salario > limite_inferior:
             base_calculo = min(salario, limite_superior) - limite_inferior
             imposto_devido += base_calculo * aliquota
-            imposto_devido = imposto_devido
 
-    return imposto_devido
+    return imposto_devido/100
+
 
 def main(aliquotas, contribuintes, outputName):
     faixas_aliqs = read_aliq(aliquotas)
@@ -47,8 +46,8 @@ def main(aliquotas, contribuintes, outputName):
     impostos_devidos = [["Nome", "Imposto"]]
 
     for nome, salario in contribuintes:
-        imposto = (calcula_imposto_renda(salario, faixas_aliqs))/100
-        impostos_devidos.append([nome, "R$ " + str(round(imposto, 2))])
+        imposto = calcula_imposto_renda(salario, faixas_aliqs)
+        impostos_devidos.append([nome, "R$ " + "{:.2f}".format(round(imposto, 2))])
     
     table = tabulate.tabulate(impostos_devidos, headers="firstrow", tablefmt="grid")
     print(table)
