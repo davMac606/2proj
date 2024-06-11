@@ -9,7 +9,7 @@ def read_aliq(file):
     faixas = []
     for i in range(1, len(linhas), 4):
         limite_inferior = float(linhas[i].strip())
-        limite_superior = float(linhas[i+1].strip()) if linhas[i+1].strip() != 'infinito' else float('inf')
+        limite_superior = float(linhas[i+1].strip())
         aliquota = float(linhas[i+2].strip())
         faixas.append((limite_inferior, limite_superior, aliquota))
     
