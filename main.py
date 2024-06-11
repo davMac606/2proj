@@ -18,7 +18,6 @@ def read_aliq(file):
 def read_cunt(file):
     cunt =  open(file + ".txt", "r")
     linhas = cunt.readlines()
-        
     cunts = []
     for i in range(0, len(linhas), 2):
         nome = linhas[i].strip()
@@ -53,7 +52,7 @@ def main(aliquotas, contribuintes, outputName):
 
     saida = open(outputName + ".txt", "w")
     saida.write(table)
-    print("Resultados salvos em " + os.path.abspath(os.getcwd()) +  "\\" +outputName + ".txt.")
+    print("Resultados salvos em:\n " + os.path.abspath(os.getcwd()) +  "\\" +outputName + ".txt.")
     print("Caminho salvo para a área de transferência.")
     pyperclip.copy(str(os.path.abspath(os.getcwd())) + "\\" + outputName + ".txt")
 
